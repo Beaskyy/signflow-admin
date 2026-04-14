@@ -204,3 +204,37 @@ export interface ActivityItem {
   target: string;
   timestamp: string;
 }
+
+// ============================================================
+// Video Library
+// ============================================================
+export interface LibraryVideo {
+  id: string;
+  gloss: string;
+  region: string;
+  video_url: string;
+  is_processed: boolean;
+  added_by_email: string;
+  created_at: string;
+}
+
+export interface LibraryVideoDetail extends LibraryVideo {
+  file_size: number;
+  pose_keypoints: string | null;
+  extracted_at: string | null;
+  updated_at: string;
+}
+
+export interface LibraryVideoFilters {
+  page?: number;
+  page_size?: number;
+  search?: string;
+  is_processed?: boolean;
+  region?: string;
+}
+
+export interface APIResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+}
