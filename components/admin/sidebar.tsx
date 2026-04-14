@@ -15,6 +15,7 @@ import {
   ChevronRight,
   LogOut,
   Hand,
+  Film,
 } from "lucide-react";
 import {
   Tooltip,
@@ -28,6 +29,7 @@ const navItems = [
   { href: "/admin/conversations", icon: MessageSquare, label: "Conversations" },
   { href: "/admin/analytics", icon: BarChart3, label: "Analytics" },
   { href: "/admin/moderation", icon: Shield, label: "Moderation" },
+  { href: "/admin/videos", icon: Film, label: "Video Library" },
   { href: "/admin/settings", icon: Settings, label: "Settings" },
 ];
 
