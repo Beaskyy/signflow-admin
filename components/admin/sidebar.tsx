@@ -22,6 +22,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useLogout } from "@/hooks/use-auth";
 
 const navItems = [
   { href: "/admin", icon: LayoutDashboard, label: "Dashboard" },
@@ -36,6 +37,7 @@ const navItems = [
 export function AdminSidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
+  const { logout } = useLogout();
 
   const isActive = (href: string) => {
     if (href === "/admin") return pathname === "/admin";
@@ -125,7 +127,10 @@ export function AdminSidebar({ onClose }: { onClose?: () => void }) {
               <p className="truncate text-sm font-medium text-white/80">Admin</p>
               <p className="truncate text-[11px] text-white/30">admin@signflow.app</p>
             </div>
-            <button className="rounded-lg p-1.5 text-white/30 transition-colors hover:bg-white/[0.06] hover:text-white/60">
+            <button 
+              onClick={logout}
+              className="rounded-lg p-1.5 text-white/30 transition-colors hover:bg-white/[0.06] hover:text-white/60"
+            >
               <LogOut className="h-4 w-4" />
             </button>
           </div>
